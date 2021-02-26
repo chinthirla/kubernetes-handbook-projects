@@ -8,7 +8,6 @@ RUN npm run build
 
 FROM nginx:stable
 
-EXPOSE 8080
+EXPOSE 80
 
-COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
 COPY --from=builder /usr/app/dist /usr/share/nginx/html
